@@ -2,6 +2,10 @@
     "AWSTemplateFormatVersion": "2010-09-09",
     "Resources": {
         "MyDBSecurityGroup": {
+            #zs:skip=AC_AWS_0065 ignore
+            #zs:skip=AC_AWS_0058 ignore
+            #zs:skip=AC_AWS_0067 ignore
+            #zs:skip=AC_AWS_0066 ignore
             "Type": "AWS::RDS::DBSecurityGroup",
             "Properties": {
                 "EC2VpcId": {
