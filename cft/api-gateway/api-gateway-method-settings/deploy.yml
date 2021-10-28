@@ -1,4 +1,5 @@
 Resources:
+  #zs:skip=AC_AWS_0007 ignore
   Prod:
     Type: AWS::ApiGateway::Stage
     Properties:
