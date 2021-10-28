@@ -102,6 +102,10 @@ resource "aws_ssm_parameter" "km_ssm_db_name" {
 }
 
 resource "aws_s3_bucket" "km_blob_storage" {
+  #zs:skip=AC_AWS_0497 ignore
+  #zs:skip=AC_AWS_0215 ignore
+  #zs:skip=AC_AWS_0214 ignore
+  #zs:skip=AC_AWS_0207 ignore
   bucket = "km-blob-storage-${var.environment}"
   acl    = "private"
   tags = merge(var.default_tags, {
@@ -110,10 +114,18 @@ resource "aws_s3_bucket" "km_blob_storage" {
 }
 
 resource "aws_s3_bucket" "km_public_blob" {
+  #zs:skip=AC_AWS_0497 ignore
+  #zs:skip=AC_AWS_0215 ignore
+  #zs:skip=AC_AWS_0214 ignore
+  #zs:skip=AC_AWS_0207 ignore
   bucket = "km-public-blob"
 }
 
 resource "aws_s3_bucket_public_access_block" "km_public_blob" {
+  #zs:skip=AC_AWS_0497 ignore
+  #zs:skip=AC_AWS_0215 ignore
+  #zs:skip=AC_AWS_0214 ignore
+  #zs:skip=AC_AWS_0207 ignore
   bucket = aws_s3_bucket.km_public_blob.id
 
   block_public_acls   = false
