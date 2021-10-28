@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "mybucket" {
-  #zs:skip=AC_AWS_0214
+  #zs:skip=AC_AWS_0214 ignore
   bucket = "mybucket"
   acl = "public"
 
