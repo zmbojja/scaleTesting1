@@ -63,6 +63,8 @@ resource "aws_eip" "km_eip" {
   })
 }
 
+#check merge
+
 resource "aws_nat_gateway" "km_nat_gateway" {
   count         = var.az_count
   subnet_id     = element(aws_subnet.km_public_subnet.*.id, count.index)
