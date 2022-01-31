@@ -1,0 +1,22 @@
+#Sample yml script to be included in the workflow :                               
+on: [push]
+jobs:
+  zscanner_job:
+    runs-on: ubuntu-latest
+    name: zscanner-action
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Run IAC Scan
+      id: iacscan
+      uses: zscaleriac/zscanner-action@main
+      with:
+        region : 'US'
+        clientid : ${{ secrets.ClientId }}
+        secretkey : ${{ secrets.ClientSecret }}
+        policy_type: 'aws'
+        iac_dir: path to a directory containing one or more IaC files
+        iac_file: path to a single iac file
+        non_recursive:  true/false
+        show-passed : true/false
+        verbose : true/false 
